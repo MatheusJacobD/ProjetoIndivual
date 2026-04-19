@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #232323;
+    font-family: "Alexandria", sans-serif;
+    overflow-x: hidden;
+}
+
+.navBar {
+    height: 60px;
+    background: #1f1f1f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px 0 10px;
+    position: relative;
+    z-index: 10;
+}
+
+.navLogo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.navLogoImagem {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.navLogoTexto {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1;
+}
+
+.navLogoDestaque {
+    color: #22c55e;
+}
+
+.navLinks {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.navLinks a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    background: #1f8f4b;
+    border-style: solid;
+    border-color: #165932;
+    border-width: 2px 2px 3px 2px;
+    border-radius: 4px;
+    padding: 10px 22px;
+    min-width: 120px;
+    text-align: center;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 1px 0 rgba(0, 0, 0, 0.35);
+}
+
+.secaoHero {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 18 / 3; 
+    overflow: hidden;
+}
+
+.heroTabuleiro {
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.heroTexto {
+    position: absolute;
+    left: 77px;
+    top: 42px;
+    z-index: 2;
+    max-width: 1000px; 
+}
+
+.heroTexto h1 {
+    color: #ffffff;
+    font-size: clamp(48px, 4vw, 72px);
+    line-height: 0.96;
+    font-weight: 400;
+    letter-spacing: -1.9px;
+    text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.55);
+}
+
+.heroTexto span {
+    color: #22d06f;
+}
+
+.casaClara,
+.casaEscura {
+    width: 100%;
+    height: 100%;
+}
