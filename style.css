@@ -264,7 +264,7 @@ body {
     gap: 40px;
 }
 
-.footerCol {
+.foterColuna {
     display: flex;
     flex-direction: column;
     gap: 8px;
