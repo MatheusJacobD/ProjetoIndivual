@@ -41,7 +41,7 @@ body {
     line-height: 1;
 }
 
-.navLogoDestaque {
+.Destaque {
     color: #22c55e;
 }
 
@@ -74,7 +74,7 @@ body {
 .secaoHero {
     position: relative;
     width: 100%;
-    aspect-ratio: 18 / 3; 
+    aspect-ratio: 18 / 3;
     overflow: hidden;
 }
 
@@ -92,7 +92,7 @@ body {
     left: 77px;
     top: 42px;
     z-index: 2;
-    max-width: 1000px; 
+    max-width: 1000px;
 }
 
 .heroTexto h1 {
@@ -112,4 +112,26 @@ body {
 .casaEscura {
     width: 100%;
     height: 100%;
+}
+
+.divDetalhe {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
+
+.iconTexto {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-left: 2%;
+    align-self: center;
+}
+
+.divIcon{
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
 }
