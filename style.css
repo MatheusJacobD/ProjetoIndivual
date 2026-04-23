@@ -45,6 +45,10 @@ body {
     color: #22c55e;
 }
 
+.Vermelho {
+    color: #CC2E31;
+}
+
 .navLinks {
     display: flex;
     gap: 24px;
@@ -152,9 +156,9 @@ body {
     right: 70px;
     top: 50%;
     transform: translateY(-50%);
-    width: 1100px;
+    width: 60%;
     color: #ffffff;
-    font-size: 80px;
+    font-size: 60px;
     line-height: 1.08;
     text-align: right;
     text-shadow: 4px 4px 7px rgba(0, 0, 0, 0.55);
@@ -192,6 +196,10 @@ body {
     padding: 0 5%;
 }
 
+.branco {
+    color: #FFFFFF;
+}
+
 .mensagemTopo {
     display: flex;
     flex-direction: column;
@@ -200,50 +208,46 @@ body {
 }
 
 .mensagemTopo span {
-    color: #ffffff;
-    font-size: 28px;
-    max-width: 900px;
+    font-size: 40px;
+    max-width: 100%;
     line-height: 1.4;
 }
 
 .imgTabuleiroMensagem {
     margin-top: 30px;
-    width: 260px;
-}
-
-.verde {
-    color: #22c55e;
-}
-
-.vermelho {
-    color: #ef4444;
+    width: 700px;
 }
 
 .mensagemBaixo {
     margin-top: 60px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
 }
 
 .iconeMensagem {
-    width: 90px;
+    width: 800px;
     margin-bottom: 20px;
+    margin-right: -5%;
 }
 
 .mensagemBaixo span {
-    color: #ffffff;
-    font-size: 26px;
-    max-width: 900px;
+    font-size: 40px;
+    max-width: 100%;
     line-height: 1.4;
 }
 
+.divBotao{
+    display: flex;
+    justify-content: center;
+}
+
 .botaoTeste {
-    margin-top: 25px;
+    margin-top: 2.5%;
     text-decoration: none;
     color: #ffffff;
-    font-size: 14px;
+    font-size: 30px;
     font-weight: 700;
     background: #1f8f4b;
     border-style: solid;

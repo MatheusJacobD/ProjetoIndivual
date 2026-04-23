@@ -11,19 +11,19 @@
 </head>
 
 <body>
-    <nav class="navBar">
+    <nav class="navBar" id="head">
         <div class="navLogo">
-            <img src="img/chessLogo.png" alt="Logo" class="navLogoImagem" />
+            <a href="index.html"><img src="img/chessLogo.png" alt="Logo" class="navLogoImagem"/></a>
             <span class="navLogoTexto">
                 Jacob's <span class="Destaque">Chess</span>
             </span>
         </div>
 
         <div class="navLinks">
-            <a href="#">DASHBOARD</a>
-            <a href="#">QUESTIONÁRIO</a>
-            <a href="#">LOGIN</a>
-            <a href="#">CADASTRO</a>
+            <a href="dash.html">DASHBOARD</a>
+            <a href="teste.html">QUESTIONÁRIO</a>
+            <a href="login.html">LOGIN</a>
+            <a href="cadastro.html">CADASTRO</a>
         </div>
     </nav>
 
@@ -68,10 +68,10 @@
 
     <section class="secaoMensagemFinal">
         <div class="mensagemTopo">
-            <span>
-                No xadrez, nem sempre a <span class="verde">melhor</span> jogada é a mais
+            <span class="branco">
+                No xadrez, nem sempre a <span class="Destaque">melhor</span> jogada é a mais
                 óbvia, e pensar além do imediato faz diferença. Cada movimento tem uma
-                <span class="verde">intenção</span>, e às vezes <span class="vermelho">perder</span>
+                <span class="Destaque">intenção</span>, e às vezes <span class="Vermelho">perder</span>
                 uma peça faz parte do plano.
             </span>
 
@@ -81,16 +81,18 @@
         <div class="mensagemBaixo">
             <img src="img/chessLogo.png" class="iconeMensagem">
 
-            <span>
-                Errar faz parte do <span class="verde">xadrez</span>, e cada partida é
+            <span class="branco">
+                Errar faz parte do <span class="Destaque">xadrez</span>, e cada partida é
                 uma chance de evoluir. Com o tempo, seu jeito de jogar começa a se revelar.
-                Descubra qual <span class="verde">abertura</span> combina com você e estime
-                seu <span class="verde">nível</span> agora.
+                Descubra qual <span class="Destaque">abertura</span> combina com você e estime
+                seu <span class="Destaque">nível</span> agora.
             </span>
-
-            <a href="#" class="botaoTeste">Realizar Teste</a>
         </div>
     </section>
+
+    <div class="divBotao"> 
+        <a href="teste.html" class="botaoTeste">Realizar Teste</a>
+    </div>
 
     <footer class="footer">
         <div class="foterColuna">
@@ -105,15 +107,16 @@
 
         <div class="foterColuna">
             <span class="footerTitulo">Projeto</span>
-            <a href="#">Figma</a>
-            <a href="#">Github</a>
+            <a
+                href="https://www.figma.com/design/gc30HGuMKjBLtGCMvTsRlC/Projeto-Individual?node-id=0-1&m=dev&t=Hp5jZGn6WC4lgh1E-1">Figma</a>
+            <a href="https://github.com/MatheusJacobD/ProjetoIndivual">Github</a>
         </div>
 
         <div class="foterColuna">
             <span class="footerTitulo">Navegação</span>
-            <a href="#">Header</a>
+            <a href="#head">Header</a>
             <a href="#explicacao">Explicação</a>
-            <a href="#">Teste</a>
+            <a href="teste.html">Teste</a>
         </div>
     </footer>
 
