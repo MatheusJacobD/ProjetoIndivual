@@ -20,7 +20,7 @@ function validar() {
             }
         }
     }
-    
+
     if (nome.length < 5) {
         nomeValido = false;
         erro_nome.innerHTML = "* nome deve ter mais que 5 caracteres";
@@ -45,4 +45,35 @@ function validar() {
         erro_email.innerHTML = "* email inválido";
         erro_email.style.color = "red";
     }
+
+    if (valido && senhaValida && nomeValido) {
+        cadastrar();
+    }
+}
+
+function cadastrar() {
+    let email = ipt_email.value;
+    let senha = ipt_senha.value;
+    let nome = ipt_nome.value;
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nomeServer: nome,
+            emailServer: email,
+            senhaServer: senha,
+            estiloServer: null
+        })
+    })
+        .then(function (resposta) {
+            if (resposta.ok) {
+                alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+            } else {
+                alert("Erro ao cadastrar");
+            }
+        })
 }

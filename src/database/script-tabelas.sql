@@ -1,5 +1,17 @@
+-- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
+-- Você precisa executar os comandos no banco de dados para criar as tabelas,
+-- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+
+/*
+comandos para mysql server
+*/
+
 CREATE DATABASE chess;
 USE chess;
+
+CREATE USER 'chess_user'@'localhost' IDENTIFIED BY 'Sptech#2024';
+GRANT ALL PRIVILEGES ON chess.* TO 'chess_user'@'localhost';
+FLUSH PRIVILEGES;
 
 CREATE TABLE abertura (
     idabertura INT AUTO_INCREMENT PRIMARY KEY,
