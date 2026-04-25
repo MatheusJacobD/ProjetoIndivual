@@ -35,26 +35,34 @@
             </div>
 
             <div class="inputSection">
-                <span class="inputTitle">email</span><br>
-                <input placeholder="exemplo.exemplo@sptech.school">
+                <span class="inputTitle">
+                    email <span id="erro_email"></span>
+                </span><br>
+                <input placeholder="exemplo.exemplo@sptech.school" id="ipt_email">
             </div>
 
             <div class="inputSection">
-                <span class="inputTitle">senha</span><br>
-                <input type="password" placeholder="exemplo.exemplo@sptech.school">
+                <span class="inputTitle">username<span id="erro_nome"></span></span><br>
+                <input placeholder="nomeradical" id="ipt_nome">
             </div>
 
             <div class="inputSection">
-                <span class="inputTitle">confirme sua senha</span><br>
-                <input type="password" placeholder="exemplo.exemplo@sptech.school">
+                <span class="inputTitle">senha<span id="erro_senha"></span></span><br>
+                <input type="password" placeholder="exemplo.exemplo@sptech.school" id="ipt_senha">
+            </div>
+
+            <div class="inputSection">
+                <span class="inputTitle">confirme sua senha <span id="erro_senhaC"></span></span><br>
+                <input type="password" placeholder="exemplo.exemplo@sptech.school" id="ipt_confirmar">
             </div>
 
             <div class="botaoFinalizarContainer">
-                <a href="login.html" class="botaoFinalizar">FINALIZAR</a>
+                <a class="botaoFinalizar" onclick="validar()">FINALIZAR</a>
             </div>
         </div>
     </div>
 
+    <script src="script/script.js"></script>
 </body>
 
 </html>
