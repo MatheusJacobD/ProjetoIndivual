@@ -311,6 +311,13 @@ body {
 
 .painel {
     width: 60%;
+    height: 70%;
+    background-color: #1E1E1E;
+    border-radius: 25px;
+}
+
+.painelLogin {
+    width: 60%;
     height: 50%;
     background-color: #1E1E1E;
     border-radius: 25px;
