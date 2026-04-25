@@ -77,3 +77,37 @@ function cadastrar() {
             }
         })
 }
+
+function login() {
+    let email = ipt_email.value;
+    let senha = ipt_senha.value;
+
+    fetch("http://localhost:3333/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: email,
+            senhaServer: senha
+        })
+    })
+        .then(function (resposta) {
+            if (!resposta.ok) {
+                throw new Error("Email ou senha inválidos");
+                return;
+            }
+
+            return resposta.json();
+        })
+        .then(function (json) {
+            sessionStorage.ID_USUARIO = json.idusuario;
+            sessionStorage.NOME_USUARIO = json.nome;
+
+            window.location = "index.html";
+        })
+        .catch(function (erro) {
+            alert("Erro ao fazer login");
+            console.log(erro);
+        });
+}

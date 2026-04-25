@@ -36,20 +36,26 @@
 
             <div class="inputSection">
                 <span class="inputTitle">email</span><br>
-                <input placeholder="exemplo.exemplo@sptech.school">
+                <input placeholder="exemplo.exemplo@sptech.school" id="ipt_email">
             </div>
 
             <div class="inputSection">
                 <span class="inputTitle">senha</span><br>
-                <input type="password" placeholder="exemplo.exemplo@sptech.school">
+                <input type="password" placeholder="exemplo.exemplo@sptech.school" id="ipt_senha">
             </div>
 
             <div class="botaoFinalizarContainer">
-                <a href="login.html" class="botaoFinalizar">FINALIZAR</a>
+                <a class="botaoFinalizar" onclick="login()">FINALIZAR</a>
             </div>
         </div>
     </div>
 
+    <script src="js/script.js"></script>
 </body>
+<script>
+    window.onload = function () {
+        console.log("ID do usuário logado:", sessionStorage.ID_USUARIO);
+    }
+</script>
 
 </html>
