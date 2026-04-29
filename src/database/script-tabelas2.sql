@@ -1,11 +1,3 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/*
-comandos para mysql server
-*/
-
 CREATE DATABASE chess;
 USE chess;
 
@@ -14,34 +6,34 @@ GRANT ALL PRIVILEGES ON chess.* TO 'chess_user'@'localhost';
 FLUSH PRIVILEGES;
 
 CREATE TABLE abertura (
-    idabertura INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(45),
-    descricao VARCHAR(150)
+    descricao TEXT
 );
 
 CREATE TABLE gm (
-    idgm INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(45),
-    descricao text,
-    abertura_idabertura INT,
-    CONSTRAINT fk_gm_abertura FOREIGN KEY (abertura_idabertura) REFERENCES abertura(idabertura)
+    descricao TEXT,
+    aberturaId INT,
+    CONSTRAINT fk_gm_abertura FOREIGN KEY (aberturaId) REFERENCES abertura(id)
 );
 
 CREATE TABLE estilo (
-    idestilo INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50),
-    descricao VARCHAR(150),
-    gm_idgm INT,
-    CONSTRAINT fk_estilo_gm FOREIGN KEY (gm_idgm) REFERENCES gm(idgm)
+    descricao TEXT,
+    gmId INT,
+    CONSTRAINT fk_estilo_gm FOREIGN KEY (gmId) REFERENCES gm(id)
 );
 
 CREATE TABLE usuario (
-    idusuario INT AUTO_INCREMENT PRIMARY KEY,
+    id INT AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(45),
     nome VARCHAR(45),
     senha VARCHAR(45),
-    estilo_idestilo INT,
-    CONSTRAINT fk_usuario_estilo FOREIGN KEY (estilo_idestilo) REFERENCES estilo(idestilo)
+    estiloId INT,
+    CONSTRAINT fk_usuario_estilo FOREIGN KEY (estiloId) REFERENCES estilo(id)
 );
 
 INSERT INTO abertura (nome, descricao) VALUES
@@ -61,7 +53,7 @@ INSERT INTO abertura (nome, descricao) VALUES
 ('Defesa Francesa', 'Estrutura fechada e estratégia paciente, com jogo de longo prazo.'),
 ('Defesa Índia da Dama', 'Defesa elegante e estratégica, com grande controle posicional.');
 
-INSERT INTO gm (nome, descricao, abertura_idabertura) VALUES
+INSERT INTO gm (nome, descricao, aberturaId) VALUES
 ('Mikhail Tal', 'Letão, campeão mundial de 1960. Conhecido como o "Mago de Riga", foi um dos jogadores mais criativos e brilhantes da história, famoso por ataques devastadores e sacrifícios inesquecíveis.', 1),
 ('Garry Kasparov', 'Russo, campeão mundial de 1985 a 2000 e considerado por muitos o maior enxadrista da história. Dominou o ranking mundial por décadas com estilo extremamente agressivo, profundo preparo teórico e enorme capacidade de pressão.', 2),
 ('Magnus Carlsen', 'Norueguês, 5 vezes campeão mundial clássico, recordista do maior rating da história (2882) e frequentemente considerado o melhor jogador de todos os tempos. É universal, genial em finais e quase imbatível em pressão posicional.', 3),
@@ -78,7 +70,7 @@ INSERT INTO gm (nome, descricao, abertura_idabertura) VALUES
 ('Tigran Petrosian', 'Armênio-soviético, campeão mundial de 1963 a 1969. Lendário por sua defesa impecável, segurança e habilidade quase única de neutralizar ataques.', 14),
 ('Hou Yifan', 'Chinesa, múltipla campeã mundial feminina e uma das maiores jogadoras da história. Conhecida por seu estilo técnico, equilibrado e estrategicamente muito forte.', 15);
 
-INSERT INTO estilo (nome, descricao, gm_idgm) VALUES
+INSERT INTO estilo (nome, descricao, gmId) VALUES
 ('Agressivo', 'Busca ataque cedo, iniciativa e complicações táticas.', 1),
 ('Agressivo', 'Pressiona o adversário sem dar tempo para simplificar.', 2),
 ('Estrategista', 'Constrói vantagem com calma, precisão e domínio posicional.', 3),
@@ -95,6 +87,7 @@ INSERT INTO estilo (nome, descricao, gm_idgm) VALUES
 ('Fechado', 'É difícil de quebrar e costuma vencer pela consistência defensiva.', 14),
 ('Estrategista', 'Joga com harmonia, técnica e ótimo controle do tabuleiro.', 15);
 
-select a.nome, g.nome, e.nome from abertura a
-join gm g on a.id = g.abertura_idabertura
-join es
+SELECT 
+    e.nome AS estilo, g.nome AS gm,  a.nome AS abertura FROM estilo e
+JOIN gm g ON e.gmId = g.id
+JOIN abertura a ON g.aberturaId = a.id;
