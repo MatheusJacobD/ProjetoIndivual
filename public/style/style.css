@@ -311,14 +311,14 @@ body {
 
 .painel {
     width: 60%;
-    height: 70%;
+    height: 92%;
     background-color: #1E1E1E;
     border-radius: 25px;
 }
 
 .painelLogin {
     width: 60%;
-    height: 50%;
+    height: 65%;
     background-color: #1E1E1E;
     border-radius: 25px;
 }
