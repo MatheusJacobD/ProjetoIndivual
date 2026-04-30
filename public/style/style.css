@@ -475,6 +475,7 @@ body {
     justify-content: start;
     height: 10%;
     width: 30%;
+    cursor: pointer;
 }
 
 .questNumber {
@@ -552,6 +553,7 @@ body {
     justify-content: center;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .questFinalText {

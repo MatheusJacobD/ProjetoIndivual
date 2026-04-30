@@ -48,7 +48,7 @@
                     </div>
 
                     <div class="questQuestion">
-                        <span class="quest">Quando aparece um problema inesperado, você geralmente</span>
+                        <span class="quest" id="pergunta"></span>
                     </div>
                 </div>
             </div>
@@ -56,21 +56,21 @@
             <div class="questColumn">
                 <div class="questRow">
 
-                    <div class="questQuestions">
+                    <div class="questQuestions" onclick="responder(0)">
                         <div class="questNumber">
                             <span class="questNumberText">1</span>
                         </div>
                         <div class="questText">
-                            <span class="questTextQuestion">Resolve na hora, mesmo sem pensar muito</span>
+                            <span class="questTextQuestion" id="primeiraQuestao"></span>
                         </div>
                     </div>
 
-                    <div class="questQuestions">
+                    <div class="questQuestions" onclick="responder(1)">
                         <div class="questNumber">
                             <span class="questNumberText">2</span>
                         </div>
                         <div class="questText">
-                            <span class="questTextQuestion">Para e analisa as opções</span>
+                            <span class="questTextQuestion" id="segundaQuestao"></span>
                         </div>
                     </div>
 
@@ -78,21 +78,21 @@
 
                 <div class="questRow">
 
-                    <div class="questQuestions">
+                    <div class="questQuestions" onclick="responder(2)">
                         <div class="questNumber">
                             <span class="questNumberText">3</span>
                         </div>
                         <div class="questText">
-                            <span class="questTextQuestion">Espera entender melhor antes de agir</span>
+                            <span class="questTextQuestion" id="terceiraQuestao"></span>
                         </div>
                     </div>
 
-                    <div class="questQuestions">
+                    <div class="questQuestions" onclick="responder(3)">
                         <div class="questNumber">
                             <span class="questNumberText">4</span>
                         </div>
                         <div class="questText">
-                            <span class="questTextQuestion">Para e analisa as opções</span>
+                            <span class="questTextQuestion" id="quartaQuestao"></span>
                         </div>
                     </div>
 
@@ -100,7 +100,7 @@
             </div>
 
             <div class="questFinal">
-                <div class="questFinalContainer">
+                <div class="questFinalContainer" onclick="carregarPergunta()">
                     <span class="questFinalText">🠖</span>
                 </div>
             </div>
