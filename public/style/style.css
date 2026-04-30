@@ -7,7 +7,6 @@
 body {
     background: #232323;
     font-family: "Alexandria", sans-serif;
-    overflow-x: hidden;
 }
 
 .navBar {
@@ -323,39 +322,39 @@ body {
     border-radius: 25px;
 }
 
-.insertLogo{
+.insertLogo {
     max-width: 150px;
 }
 
-.insertHeader{
+.insertHeader {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.insertTitle{
+.insertTitle {
     color: white;
     font-size: 40px;
     margin-left: -3%;
     font-weight: bold;
 }
 
-.inputTitle{
+.inputTitle {
     color: white;
     opacity: 35%;
     font-size: 18px;
     margin-bottom: -1%;
 }
 
-.inputSection{
+.inputSection {
     width: 70%;
     margin: 20px auto 0 auto;
     display: flex;
     flex-direction: column;
 }
 
-.inputSection input{
+.inputSection input {
     width: 100%;
     height: 40px;
     border: none;
@@ -366,13 +365,13 @@ body {
     font-size: 18px;
 }
 
-.botaoFinalizarContainer{
+.botaoFinalizarContainer {
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
 
-.botaoFinalizar{
+.botaoFinalizar {
     text-decoration: none;
     color: #d7d7d7;
     font-size: 18px;
@@ -385,4 +384,192 @@ body {
     text-align: center;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.panelContainer {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.painelBack {
+    width: 90%;
+    height: 85%;
+    background-color: #1E1E1E;
+    border-radius: 25px;
+}
+
+.painelHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.questLogo {
+    max-width: 100px;
+}
+
+.questTitle {
+    color: white;
+    font-size: 30px;
+    margin-left: -2%;
+    font-weight: bold;
+}
+
+.progressContainer {
+    width: 95%;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.progressBar {
+    height: 20px;
+    width: 0%;
+    background-color: #27AE60;
+    justify-content: center;
+}
+
+.questImg {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+.questBack {
+    background-color: #2A2A2A;
+    padding: 10px;
+    border-color: black;
+    border-radius: 10px;
+    border-width: 5px;
+    border-style: solid;
+}
+
+.questQuestion {
+    color: white;
+    display: flex;
+    justify-content: start;
+    font-size: 30px;
+    width: 80%;
+    align-items: center;
+}
+
+.quest {
+    text-align: start;
+    max-width: 600px;
+}
+
+.questQuestions {
+    display: flex;
+    margin-top: 2%;
+    justify-content: start;
+    height: 10%;
+    width: 30%;
+}
+
+.questNumber {
+    background-color: #1C7341;
+    width: 15%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #165932;
+    border-width: 5px;
+    border-style: solid;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 30px;
+}
+
+.questNumberText {
+    font-size: 50px;
+    color: white;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.questText {
+    background-color: #1C7341;
+    width: 90%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: #165932;
+    border-width: 5px 5px 5px 0px;
+    border-style: solid;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.questTextQuestion {
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.questColumn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.questRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+    align-items: center;
+}
+
+.questFinal {
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+    margin-top: -2%;
+}
+
+.questFinalContainer {
+    background-color: #1C7341;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    border: solid 4px #165932;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.questFinalText {
+    color: white;
+    font-size: 60px;
+}
+
+.mainPanel {
+    display: flex;
+    justify-content: center;
+}
+
+.imgTextContainer {
+    display: flex;
+    background-color: #3D3D3D;
+    margin-top: 3%;
+    width: 70%;
+    justify-content: start;
+    padding: 20px;
+    border-radius: 5px;
 }
