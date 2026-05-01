@@ -231,7 +231,7 @@ function carregarPergunta() {
             .then(function (resposta) {
 
                 if (resposta.ok) {
-                    window.location.href = "index.html";
+                    window.location.href = "resultado.html";
                 } else {
                     alert("Erro ao salvar resultado");
                 }
