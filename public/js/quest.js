@@ -170,6 +170,30 @@ const resultadoPerguntas = [
     ]
 ]
 
+const idEstilo = {
+    agressivo: 1,
+    estrategico: 2,
+    fechado: 3
+};
+
+const idGm = {
+    'Mikhail Tal': 1,
+    'Garry Kasparov': 2,
+    'Magnus Carlsen': 3,
+    'Anatoly Karpov': 4,
+    'Bobby Fischer': 5,
+    'Vladimir Kramnik': 6,
+    'Hikaru Nakamura': 7,
+    'Judit Polgar': 8,
+    'Viswanathan Anand': 9,
+    'Fabiano Caruana': 10,
+    'Ding Liren': 11,
+    'Alireza Firouzja': 12,
+    'Wesley So': 13,
+    'Tigran Petrosian': 14,
+    'Hou Yifan': 15
+};
+
 let perguntaCount = 0;
 let respAtual = true;
 let progresso = document.getElementById('progressoPorc');
@@ -180,12 +204,46 @@ let respostaEscolhida;
 
 carregarPergunta();
 
+if (!sessionStorage.ID_USUARIO) {
+    alert('Por favor, faça seu login antes de responder o questionário');
+    window.location.href = 'login.html';
+}
+
 function carregarPergunta() {
-    if (perguntaCount == 16){
-        console.log(gms, estilo);
-        //window.location.href = 'index.html';
+    if (perguntaCount == 16) {
+        let estiloFinal = maiorPontuacao(estilo);
+        let gmFinal = maiorPontuacao(gms);
+
+        let estiloId = idEstilo[estiloFinal];
+        let gmId = idGm[gmFinal];
+
+        fetch("/quiz/salvarResultado", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                estiloServer: estiloId,
+                gmServer: gmId
+            })
+        })
+            .then(function (resposta) {
+
+                if (resposta.ok) {
+                    window.location.href = "index.html";
+                } else {
+                    alert("Erro ao salvar resultado");
+                }
+
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+
+        return;
     }
-    
+
     if (!respAtual) {
         return;
     }
@@ -232,6 +290,20 @@ function responder(resposta) {
     botoes[resposta - 1].style.color = '#2A2A2A';
 
     exec = true;
+}
+
+function maiorPontuacao(indice) {
+    let nomes = Object.keys(indice);
+
+    let maior = nomes[0];
+
+    for (let i = 1; i < nomes.length; i++) {
+        if (indice[nomes[i]] > indice[maior]) {
+            maior = nomes[i];
+        }
+    }
+
+    return maior;
 }
 
 

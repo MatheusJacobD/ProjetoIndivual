@@ -76,8 +76,3 @@ INSERT INTO gm (nome, descricao) VALUES
 ('Wesley So', 'Filipino-americano, campeão mundial de Fischer Random e um dos jogadores mais sólidos da atualidade. Famoso por sua consistência, frieza e eficiência competitiva.'),
 ('Tigran Petrosian', 'Armênio-soviético, campeão mundial de 1963 a 1969. Lendário por sua defesa impecável, segurança e habilidade quase única de neutralizar ataques.'),
 ('Hou Yifan', 'Chinesa, múltipla campeã mundial feminina e uma das maiores jogadoras da história. Conhecida por seu estilo técnico, equilibrado e estrategicamente muito forte.');
-
-SELECT
-    a.nome AS abertura,
-    e.nome AS estilo
-FROM abertura a JOIN estilo e ON a.estiloId = e.id;

@@ -65,7 +65,9 @@ function cadastrar() {
             nomeServer: nome,
             emailServer: email,
             senhaServer: senha,
-            estiloServer: null
+            estiloServer: null,
+            gmServer: null
+
         })
     })
         .then(function (resposta) {
@@ -101,7 +103,7 @@ function login() {
             return resposta.json();
         })
         .then(function (json) {
-            sessionStorage.ID_USUARIO = json.idusuario;
+            sessionStorage.ID_USUARIO = json.id;
             sessionStorage.NOME_USUARIO = json.nome;
 
             window.location = "index.html";
