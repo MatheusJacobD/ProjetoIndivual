@@ -53,23 +53,154 @@ const perguntas = {
 
     'Em um ambiente competitivo, você:': ['quer se destacar', 'quer vencer pela estratégia', 'quer evitar erros', 'quer se adaptar melhor que os outros'],
 
-    'O que melhor te representa?:': ['intensidade', 'precisão', 'segurança', 'versatilidade']
+    'O que melhor te representa?': ['intensidade', 'precisão', 'segurança', 'versatilidade']
 }
 
+const resultadoPerguntas = [
+    [
+        ['agressivo', 'Hikaru Nakamura'],
+        ['estrategico', 'Magnus Carlsen'],
+        ['fechado', 'Vladimir Kramnik'],
+        ['estrategico', 'Viswanathan Anand']
+    ],
+
+    [
+        ['agressivo', 'Mikhail Tal'],
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Tigran Petrosian'],
+        ['agressivo', 'Garry Kasparov']
+    ],
+
+    [
+        ['agressivo', 'Judit Polgar'],
+        ['estrategico', 'Bobby Fischer'],
+        ['fechado', 'Wesley So'],
+        ['estrategico', 'Ding Liren']
+    ],
+
+    [
+        ['agressivo', 'Alireza Firouzja'],
+        ['estrategico', 'Magnus Carlsen'],
+        ['fechado', 'Anatoly Karpov'],
+        ['estrategico', 'Hou Yifan']
+    ],
+
+    [
+        ['agressivo', 'Garry Kasparov'],
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Vladimir Kramnik'],
+        ['agressivo', 'Hikaru Nakamura']
+    ],
+
+    [
+        ['agressivo', 'Judit Polgar'],
+        ['estrategico', 'Ding Liren'],
+        ['fechado', 'Tigran Petrosian'],
+        ['estrategico', 'Viswanathan Anand']
+    ],
+
+    [
+        ['agressivo', 'Garry Kasparov'],
+        ['estrategico', 'Bobby Fischer'],
+        ['fechado', 'Wesley So'],
+        ['estrategico', 'Hou Yifan']
+    ],
+
+    [
+        ['agressivo', 'Mikhail Tal'],
+        ['estrategico', 'Magnus Carlsen'],
+        ['fechado', 'Anatoly Karpov'],
+        ['estrategico', 'Viswanathan Anand']
+    ],
+
+    [
+        ['agressivo', 'Alireza Firouzja'],
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Vladimir Kramnik'],
+        ['estrategico', 'Ding Liren']
+    ],
+
+    [
+        ['agressivo', 'Hikaru Nakamura'],
+        ['estrategico', 'Bobby Fischer'],
+        ['fechado', 'Wesley So'],
+        ['agressivo', 'Mikhail Tal']
+    ],
+
+    [
+        ['agressivo', 'Garry Kasparov'],
+        ['estrategico', 'Magnus Carlsen'],
+        ['fechado', 'Tigran Petrosian'],
+        ['agressivo', 'Alireza Firouzja']
+    ],
+
+    [
+        ['agressivo', 'Judit Polgar'],
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Anatoly Karpov'],
+        ['estrategico', 'Hou Yifan']
+    ],
+
+    [
+        ['agressivo', 'Garry Kasparov'],
+        ['estrategico', 'Ding Liren'],
+        ['fechado', 'Vladimir Kramnik'],
+        ['estrategico', 'Viswanathan Anand']
+    ],
+
+    [
+        ['agressivo', 'Hikaru Nakamura'],
+        ['estrategico', 'Magnus Carlsen'],
+        ['fechado', 'Wesley So'],
+        ['agressivo', 'Mikhail Tal']
+    ],
+
+    [
+        ['agressivo', 'Alireza Firouzja'],
+        ['estrategico', 'Bobby Fischer'],
+        ['fechado', 'Tigran Petrosian'],
+        ['estrategico', 'Hou Yifan']
+    ],
+
+    [
+        ['agressivo', 'Mikhail Tal'],
+        ['estrategico', 'Magnus Carlsen'],
+        ['fechado', 'Anatoly Karpov'],
+        ['estrategico', 'Viswanathan Anand']
+    ]
+]
+
 let perguntaCount = 0;
-let respAtual = false;
+let respAtual = true;
+let progresso = document.getElementById('progressoPorc');
+let ultBotao;
 let exec = false;
+let porc = 0;
+let respostaEscolhida;
 
 carregarPergunta();
 
 function carregarPergunta() {
-    if (!exec){
-        respAtual = true;
-        exec = true;
+    if (perguntaCount == 16){
+        console.log(gms, estilo);
+        //window.location.href = 'index.html';
     }
-
+    
     if (!respAtual) {
         return;
+    }
+
+    if (exec) {
+        ultBotao.style.color = 'white';
+        porc += 6.25;
+        progresso.style.width = porc + '%';
+
+        let dadosResposta = resultadoPerguntas[perguntaCount - 1][respostaEscolhida - 1];
+        let estiloEscolhido = dadosResposta[0];
+        let gmEscolhido = dadosResposta[1];
+
+        estilo[estiloEscolhido]++;
+        gms[gmEscolhido]++;
     }
 
     let titulos = Object.keys(perguntas);
@@ -86,7 +217,21 @@ function carregarPergunta() {
 }
 
 function responder(resposta) {
-    respAtual = resposta;
+    if (exec) {
+        ultBotao.style.color = 'white';
+    }
+
+    respostaEscolhida = resposta;
+
+    respAtual = true;
+
+    let botoes = document.querySelectorAll('.questNumberText');
+
+    ultBotao = botoes[resposta - 1];
+
+    botoes[resposta - 1].style.color = '#2A2A2A';
+
+    exec = true;
 }
 
 
