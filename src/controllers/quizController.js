@@ -5,6 +5,7 @@ function salvarResultado(req, res) {
     var idUsuario = req.body.idUsuarioServer;
     var estilo = req.body.estiloServer;
     var gm = req.body.gmServer;
+    var abertura = req.body.aberturaServer;
 
     if (idUsuario == undefined) {
         res.status(400).send("idUsuario undefined");
@@ -14,7 +15,7 @@ function salvarResultado(req, res) {
         res.status(400).send("gm undefined");
     } else {
 
-        quizModel.salvarResultado(idUsuario, estilo, gm)
+        quizModel.salvarResultado(idUsuario, estilo, gm, abertura)
             .then(function (resultado) {
                 res.json(resultado);
             })

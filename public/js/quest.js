@@ -217,6 +217,24 @@ function carregarPergunta() {
         let estiloId = idEstilo[estiloFinal];
         let gmId = idGm[gmFinal];
 
+        let aberturaId;
+
+        if (estiloFinal == 'agressivo') {
+            estiloId = 1;
+
+            aberturaId = parseInt(Math.random() * 5) + 1;
+
+        } else if (estiloFinal == 'estrategico') {
+            estiloId = 2;
+
+            aberturaId = parseInt(Math.random() * 5) + 6;
+
+        } else {
+            estiloId = 3;
+
+            aberturaId = parseInt(Math.random() * 5) + 11;
+        }
+
         fetch("/quiz/salvarResultado", {
             method: "POST",
             headers: {
@@ -225,7 +243,8 @@ function carregarPergunta() {
             body: JSON.stringify({
                 idUsuarioServer: sessionStorage.ID_USUARIO,
                 estiloServer: estiloId,
-                gmServer: gmId
+                gmServer: gmId,
+                aberturaServer: aberturaId
             })
         })
             .then(function (resposta) {
