@@ -81,3 +81,94 @@ INSERT INTO gm (nome, descricao) VALUES
 ('Wesley So', 'Filipino-americano, campeão mundial de Fischer Random e um dos jogadores mais sólidos da atualidade. Famoso por sua consistência, frieza e eficiência competitiva.'),
 ('Tigran Petrosian', 'Armênio-soviético, campeão mundial de 1963 a 1969. Lendário por sua defesa impecável, segurança e habilidade quase única de neutralizar ataques.'),
 ('Hou Yifan', 'Chinesa, múltipla campeã mundial feminina e uma das maiores jogadoras da história. Conhecida por seu estilo técnico, equilibrado e estrategicamente muito forte.');
+
+-- select para dash
+-- qtd de usuarios, estilo, qtd de cada estilo, gm, qtd de cada gm, abertura, qtd de cada abertura, % de usuarios que completaram o quest (usuario pode logar e nao responder) e os usuários que responderam (id, nome e estilo)
+
+SELECT COUNT(*) AS totalUsuarios
+FROM usuario;
+
+SELECT COUNT(*) AS usuariosResponderam
+FROM usuario
+WHERE estiloId IS NOT NULL;
+
+SELECT 
+    COUNT(*) AS totalUsuarios,
+    COUNT(estiloId) AS usuariosResponderam
+FROM usuario;
+
+SELECT COUNT(*) AS usuariosNaoResponderam
+FROM usuario
+WHERE estiloId IS NULL;
+
+SELECT 
+    e.nome AS estilo,
+    COUNT(u.id) AS quantidade
+FROM estilo e
+LEFT JOIN usuario u 
+    ON u.estiloId = e.id
+GROUP BY e.id, e.nome
+ORDER BY quantidade DESC;
+
+SELECT 
+    g.nome AS gm,
+    COUNT(u.id) AS quantidade
+FROM gm g
+LEFT JOIN usuario u 
+    ON u.gmId = g.id
+GROUP BY g.id, g.nome
+ORDER BY quantidade DESC;
+
+SELECT 
+    a.nome AS abertura,
+    COUNT(u.id) AS quantidade
+FROM abertura a
+LEFT JOIN usuario u 
+    ON u.aberturaId = a.id
+GROUP BY a.id, a.nome
+ORDER BY quantidade DESC;
+
+SELECT 
+    u.id,
+    u.nome,
+    e.nome AS estilo,
+    g.nome AS gm,
+    a.nome AS abertura
+FROM usuario u
+JOIN estilo e 
+    ON u.estiloId = e.id
+JOIN gm g 
+    ON u.gmId = g.id
+JOIN abertura a 
+    ON u.aberturaId = a.id
+ORDER BY u.nome;
+
+SELECT 
+    e.nome AS estiloMaisComum,
+    COUNT(u.id) AS quantidade
+FROM estilo e
+JOIN usuario u 
+    ON u.estiloId = e.id
+GROUP BY e.id, e.nome
+ORDER BY quantidade DESC
+LIMIT 1;
+
+SELECT 
+    g.nome AS gmMaisRecebido,
+    COUNT(u.id) AS quantidade
+FROM gm g
+JOIN usuario u 
+    ON u.gmId = g.id
+GROUP BY g.id, g.nome
+ORDER BY quantidade DESC
+LIMIT 1;
+
+SELECT 
+    a.nome AS aberturaMaisRecebida,
+    COUNT(u.id) AS quantidade
+FROM abertura a
+JOIN usuario u 
+    ON u.aberturaId = a.id
+GROUP BY a.id, a.nome
+ORDER BY quantidade DESC
+LIMIT 1;

@@ -23,7 +23,7 @@ function gerar(id, linhas, colunas) {
             let casa = document.createElement("div");
             let cor;
 
-            if ((linha + coluna) % 2 === 0) {
+            if ((linha + coluna) % 2 == 0) {
                 cor = corBege;
                 casa.className = "casaClara";
             } else {
