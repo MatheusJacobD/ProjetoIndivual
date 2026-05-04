@@ -85,22 +85,27 @@ INSERT INTO gm (nome, descricao) VALUES
 -- select para dash
 -- qtd de usuarios, estilo, qtd de cada estilo, gm, qtd de cada gm, abertura, qtd de cada abertura, % de usuarios que completaram o quest (usuario pode logar e nao responder) e os usuários que responderam (id, nome e estilo)
 
+-- qtd usuarios
 SELECT COUNT(*) AS totalUsuarios
 FROM usuario;
 
+-- qtd usuario responderam quest
 SELECT COUNT(*) AS usuariosResponderam
 FROM usuario
 WHERE estiloId IS NOT NULL;
 
+-- comparação total usuario x responderam
 SELECT 
     COUNT(*) AS totalUsuarios,
     COUNT(estiloId) AS usuariosResponderam
 FROM usuario;
 
+-- qtd nao responderam
 SELECT COUNT(*) AS usuariosNaoResponderam
 FROM usuario
 WHERE estiloId IS NULL;
 
+-- estilos e qtds
 SELECT 
     e.nome AS estilo,
     COUNT(u.id) AS quantidade
@@ -110,6 +115,7 @@ LEFT JOIN usuario u
 GROUP BY e.id, e.nome
 ORDER BY quantidade DESC;
 
+-- gms e qtd
 SELECT 
     g.nome AS gm,
     COUNT(u.id) AS quantidade
@@ -119,6 +125,7 @@ LEFT JOIN usuario u
 GROUP BY g.id, g.nome
 ORDER BY quantidade DESC;
 
+-- aberturas e qtd
 SELECT 
     a.nome AS abertura,
     COUNT(u.id) AS quantidade
@@ -126,8 +133,10 @@ FROM abertura a
 LEFT JOIN usuario u 
     ON u.aberturaId = a.id
 GROUP BY a.id, a.nome
-ORDER BY quantidade DESC;
+ORDER BY quantidade DESC
+limit 5;
 
+-- ranking
 SELECT 
     u.id,
     u.nome,
@@ -140,9 +149,9 @@ JOIN estilo e
 JOIN gm g 
     ON u.gmId = g.id
 JOIN abertura a 
-    ON u.aberturaId = a.id
-ORDER BY u.nome;
+    ON u.aberturaId = a.id;
 
+-- estilocomum
 SELECT 
     e.nome AS estiloMaisComum,
     COUNT(u.id) AS quantidade
@@ -153,6 +162,7 @@ GROUP BY e.id, e.nome
 ORDER BY quantidade DESC
 LIMIT 1;
 
+-- gm comum
 SELECT 
     g.nome AS gmMaisRecebido,
     COUNT(u.id) AS quantidade
@@ -163,7 +173,9 @@ GROUP BY g.id, g.nome
 ORDER BY quantidade DESC
 LIMIT 1;
 
+-- abertura comum
 SELECT 
+	a.id as id,
     a.nome AS aberturaMaisRecebida,
     COUNT(u.id) AS quantidade
 FROM abertura a

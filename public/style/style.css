@@ -761,6 +761,120 @@ body {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 2px 0 rgba(0, 0, 0, 0.35);
 }
 
-#resultadoGMImagem{
+#resultadoGMImagem {
     max-width: 100px;
+}
+
+.dashContainer {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 20px;
+}
+
+.painelDash {
+    width: 90%;
+    height: 90%;
+    background-color: #1E1E1E;
+    border-radius: 25px;
+}
+
+.dashLogo {
+    max-width: 50px;
+}
+
+.dashTitle {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dashHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+
+.kpis {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+    height: 300px;
+    margin-top: -1%;
+}
+
+.kpi {
+    background-color: #3D3D3D;
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.KPItitle {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.KPItitleAG {
+    color: #CC2E31;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.KPItitleFC {
+    color: #2E5BCC;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.KPItitleES {
+    color: #27AE60;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.KPIBody {
+    font-size: 80px;
+    text-align: center;
+    color: white;
+}
+
+.KPIBodyGr {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    width: 150px;
+}
+
+.BodyContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+}
+
+.TitleContainer {
+    height: 30px;
+}
+
+.areaPizza {
+    width: 350px;
+    height: 350px;
+    margin-top: -7%;
+    margin-left: 20px;
+    position: relative;
+}
+
+#graficoPizza {
+    width: 100% !important;
+    height: 100% !important;
 }
