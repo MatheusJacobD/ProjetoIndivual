@@ -72,7 +72,6 @@ function cadastrar() {
     })
         .then(function (resposta) {
             if (resposta.ok) {
-                alert("Cadastro realizado com sucesso!");
                 window.location = "login.html";
             } else {
                 alert("Erro ao cadastrar");

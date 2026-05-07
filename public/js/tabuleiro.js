@@ -6,52 +6,42 @@ function gerar(id, linhas, colunas) {
     if (!tabuleiro) {
         return;
     }
+
     let texto = tabuleiro.querySelector("span");
+    let textoHTML = "";
 
-    let grid = document.createElement("div");
-    grid.className = "gridTabuleiro";
+    if (texto) {
+        textoHTML = texto.outerHTML;
+    }
 
-    grid.style.position = "absolute";
-    grid.style.inset = "0";
-    grid.style.display = "grid";
-    grid.style.gridTemplateColumns = `repeat(${colunas}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat(${linhas}, 1fr)`;
-    grid.style.zIndex = "1";
+    let html = "";
 
     for (let linha = 0; linha < linhas; linha++) {
         for (let coluna = 0; coluna < colunas; coluna++) {
-            let casa = document.createElement("div");
-            let cor;
-
-            if ((linha + coluna) % 2 == 0) {
-                cor = corBege;
-                casa.className = "casaClara";
-            } else {
-                cor = corVerde;
-                casa.className = "casaEscura";
-            }
+            let cor = ((linha + coluna) % 2 == 0) ? corBege : corVerde;
 
             let r = parseInt(cor.slice(1, 3), 16);
             let g = parseInt(cor.slice(3, 5), 16);
             let b = parseInt(cor.slice(5, 7), 16);
 
             let opacidade = 1 - (coluna * 0.05);
-            if (opacidade < 0.15) opacidade = 0.15;
+            if (opacidade < 0.15) {
+                opacidade = 0.15;
+            }
 
-            casa.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacidade})`;
-
-            grid.appendChild(casa);
+            html += `
+                <div style="
+                    width: ${100 / colunas}%;
+                    height: ${100 / linhas}%;
+                    float: left;
+                    background-color: rgba(${r}, ${g}, ${b}, ${opacidade});
+                "></div>
+            `;
         }
     }
 
-    tabuleiro.innerHTML = "";
-    tabuleiro.appendChild(grid);
-
-    if (texto) {
-        texto.classList.add("textoTabuleiroFinal");
-        tabuleiro.appendChild(texto);
-    }
+    tabuleiro.innerHTML = html + textoHTML;
 }
 
-gerar("tabuleiroHero", 3, 18);
+gerar("tabuleiroTab", 3, 18);
 gerar("tabuleiroFinal", 8, 18);

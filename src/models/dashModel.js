@@ -44,7 +44,7 @@ function receberResultados() {
             ON u.aberturaId = a.id
         GROUP BY a.id, a.nome
         ORDER BY quantidade DESC
-        limit 5;
+        limit 4;
 
         SELECT 
             g.nome AS gm,
@@ -53,7 +53,8 @@ function receberResultados() {
         LEFT JOIN usuario u 
             ON u.gmId = g.id
         GROUP BY g.id, g.nome
-        ORDER BY quantidade DESC;
+        ORDER BY quantidade DESC
+        limit 6;
 
         SELECT 
             u.id,

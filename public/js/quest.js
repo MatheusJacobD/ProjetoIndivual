@@ -16,6 +16,43 @@ gms = {
     'Hou Yifan': 0
 }
 
+const pesosPergunta = [
+    1,
+    2,
+    2,
+    1,
+    3,
+    2,
+    2,
+    3,
+    2,
+    1,
+    1,
+    2,
+    2,
+    3,
+    2,
+    3
+];
+
+const pesoGm = {
+    'Mikhail Tal': 1.15,
+    'Garry Kasparov': 0.9,
+    'Magnus Carlsen': 0.75,
+    'Anatoly Karpov': 1.1,
+    'Bobby Fischer': 1,
+    'Vladimir Kramnik': 1.05,
+    'Hikaru Nakamura': 1,
+    'Judit Polgar': 1.1,
+    'Viswanathan Anand': 1,
+    'Fabiano Caruana': 1,
+    'Ding Liren': 1.05,
+    'Alireza Firouzja': 1,
+    'Wesley So': 1.1,
+    'Tigran Petrosian': 1.15,
+    'Hou Yifan': 1.2
+};
+
 estilo = {
     'agressivo': 0,
     'fechado': 0,
@@ -23,43 +60,123 @@ estilo = {
 }
 
 const perguntas = {
-    'Quando aparece um problema inesperado, você geralmente:': ['resolve na hora, mesmo sem pensar muito', 'para e analisa as opções', 'espera entender melhor antes de agir', 'tenta algo e ajusta no caminho'],
+    'No início da partida, você prefere:': [
+        'buscar ataque rapidamente',
+        'desenvolver as peças com calma',
+        'fortalecer sua defesa antes de atacar',
+        'adaptar sua abertura ao adversário'
+    ],
 
-    'Em situações de pressão, você tende a:': ['agir rápido', 'manter a calma e calcular', 'reduzir riscos', 'mudar de estratégia conforme a situação'],
+    'Quando encontra uma oportunidade tática, você costuma:': [
+        'sacrificar peças sem medo',
+        'calcular todas as variantes antes',
+        'evitar riscos desnecessários',
+        'testar ideias inesperadas'
+    ],
 
-    'Quando precisa tomar uma decisão importante, você:': ['segue seu instinto', 'pensa nas consequências a longo prazo', 'escolhe a opção mais segura', 'mistura lógica com intuição'],
+    'Como você gosta de organizar suas peças?': [
+        'de forma espalhada, explorando pontos fracos do oponente.',
+        'de forma equilibrada, equilibrando ataque e defesa.',
+        'de forma sólida, focando totalmente na defesa.',
+        'de forma dinâmica, se adaptando ao jogo do oponente.'
+    ],
 
-    'Você se considera uma pessoa mais:': ['ousada', 'analítica', 'cautelosa', 'flexível'],
+    'Ao jogar contra alguém mais experiente, você prefere:': [
+        'pressionar desde o começo',
+        'jogar de forma precisa',
+        'segurar a posição e esperar erros',
+        'mudar o estilo durante a partida'
+    ],
 
-    'Ao enfrentar um desafio difícil, você prefere:': ['encarar de frente', 'entender primeiro como ele funciona', 'agir com calma e segurança', 'testar diferentes caminhos'],
+    'Qual aspecto do xadrez você mais valoriza?': [
+        'ataque ao rei',
+        'planejamento estratégico',
+        'segurança das peças',
+        'criatividade'
+    ],
 
-    'Quando algo dá errado, sua primeira reação é:': ['tentar resolver imediatamente', 'entender o motivo do erro', 'evitar piorar a situação', 'mudar completamente a abordagem'],
+    'Quando está em vantagem, você geralmente:': [
+        'parte para finalizar rápido',
+        'converte a vantagem com técnica',
+        'simplifica para evitar riscos',
+        'mantém pressão constante'
+    ],
 
-    'Em trabalhos em grupo, você costuma:': ['tomar a frente', 'organizar a estratégia', 'garantir que tudo saia sem problemas', 'se adaptar ao papel necessário'],
+    'Quando está em desvantagem, você tende a:': [
+        'buscar complicações táticas',
+        'procurar recursos estratégicos',
+        'defender pacientemente',
+        'mudar completamente o plano'
+    ],
 
-    'O que você valoriza mais?': ['iniciativa', 'inteligência', 'estabilidade', 'versatilidade'],
+    'Qual abertura mais combina com você?': [
+        'gambitos agressivos',
+        'aberturas clássicas',
+        'sistemas sólidos',
+        'linhas flexíveis'
+    ],
 
-    'Quando percebe uma oportunidade, você:': ['aproveita na hora', 'avalia se é a melhor escolha', 'espera um momento mais seguro', 'adapta a oportunidade ao seu plano'],
+    'No meio-jogo, você prefere:': [
+        'iniciativa e ataque',
+        'controle posicional',
+        'estrutura sólida',
+        'improvisar conforme a posição'
+    ],
 
-    'Você costuma aprender melhor:': ['fazendo', 'estudando antes', 'repetindo com segurança', 'testando métodos diferentes'],
+    'Em finais, você costuma:': [
+        'forçar chances rapidamente',
+        'calcular com precisão',
+        'jogar de forma segura',
+        'buscar ideias diferentes'
+    ],
 
-    'O que mais te incomoda?': ['lentidão', 'falta de lógica', 'imprevisibilidade', 'rotina'],
+    'O que mais te incomoda em uma partida?': [
+        'jogo lento',
+        'erros estratégicos',
+        'posições arriscadas',
+        'posições previsíveis'
+    ],
 
-    'Em geral, você prefere:': ['agir primeiro', 'planejar primeiro', 'proteger o que já tem', 'mudar conforme o contexto'],
+    'Quando vê um sacrifício possível, você:': [
+        'faz imediatamente',
+        'calcula profundamente',
+        'prefere manter material',
+        'decide conforme a posição'
+    ],
 
-    'Quando alguém discorda de você, você:': ['rebate na hora', 'tenta entender o ponto', 'evita conflito', 'muda o argumento conforme a conversa'],
+    'Contra ataques fortes do adversário, você:': [
+        'contra-ataca',
+        'procura a melhor defesa',
+        'fecha completamente a posição',
+        'adapta o plano rapidamente'
+    ],
 
-    'Você costuma tomar decisões:': ['rapidamente', 'de forma planejada', 'com cautela', 'adaptando ao momento'],
+    'Qual frase mais combina com seu estilo?': [
+        'o ataque resolve tudo',
+        'precisão vence partidas',
+        'defesa sólida é essencial',
+        'xadrez é adaptação'
+    ],
 
-    'Em um ambiente competitivo, você:': ['quer se destacar', 'quer vencer pela estratégia', 'quer evitar erros', 'quer se adaptar melhor que os outros'],
+    'Em partidas, você prefere vencer:': [
+        'com jogadas brilhantes',
+        'com consistência estratégica',
+        'com poucos erros',
+        'surpreendendo adversários'
+    ],
 
-    'O que melhor te representa?': ['intensidade', 'precisão', 'segurança', 'versatilidade']
+    'Qual característica define melhor seu xadrez?': [
+        'agressividade',
+        'estratégia',
+        'solidez',
+        'versatilidade'
+    ]
 }
 
 const resultadoPerguntas = [
     [
         ['agressivo', 'Hikaru Nakamura'],
-        ['estrategico', 'Magnus Carlsen'],
+        ['estrategico', 'Bobby Fischer'],
         ['fechado', 'Vladimir Kramnik'],
         ['estrategico', 'Viswanathan Anand']
     ],
@@ -73,21 +190,21 @@ const resultadoPerguntas = [
 
     [
         ['agressivo', 'Judit Polgar'],
-        ['estrategico', 'Bobby Fischer'],
+        ['estrategico', 'Ding Liren'],
         ['fechado', 'Wesley So'],
-        ['estrategico', 'Ding Liren']
+        ['fechado', 'Hou Yifan']
     ],
 
     [
         ['agressivo', 'Alireza Firouzja'],
         ['estrategico', 'Magnus Carlsen'],
         ['fechado', 'Anatoly Karpov'],
-        ['estrategico', 'Hou Yifan']
+        ['estrategico', 'Fabiano Caruana']
     ],
 
     [
         ['agressivo', 'Garry Kasparov'],
-        ['estrategico', 'Fabiano Caruana'],
+        ['estrategico', 'Viswanathan Anand'],
         ['fechado', 'Vladimir Kramnik'],
         ['agressivo', 'Hikaru Nakamura']
     ],
@@ -96,79 +213,79 @@ const resultadoPerguntas = [
         ['agressivo', 'Judit Polgar'],
         ['estrategico', 'Ding Liren'],
         ['fechado', 'Tigran Petrosian'],
-        ['estrategico', 'Viswanathan Anand']
-    ],
-
-    [
-        ['agressivo', 'Garry Kasparov'],
-        ['estrategico', 'Bobby Fischer'],
-        ['fechado', 'Wesley So'],
-        ['estrategico', 'Hou Yifan']
+        ['fechado', 'Bobby Fischer']
     ],
 
     [
         ['agressivo', 'Mikhail Tal'],
-        ['estrategico', 'Magnus Carlsen'],
-        ['fechado', 'Anatoly Karpov'],
-        ['estrategico', 'Viswanathan Anand']
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Wesley So'],
+        ['fechado', 'Hou Yifan']
     ],
 
     [
         ['agressivo', 'Alireza Firouzja'],
-        ['estrategico', 'Fabiano Caruana'],
-        ['fechado', 'Vladimir Kramnik'],
-        ['estrategico', 'Ding Liren']
-    ],
-
-    [
-        ['agressivo', 'Hikaru Nakamura'],
-        ['estrategico', 'Bobby Fischer'],
-        ['fechado', 'Wesley So'],
-        ['agressivo', 'Mikhail Tal']
-    ],
-
-    [
-        ['agressivo', 'Garry Kasparov'],
         ['estrategico', 'Magnus Carlsen'],
-        ['fechado', 'Tigran Petrosian'],
-        ['agressivo', 'Alireza Firouzja']
-    ],
-
-    [
-        ['agressivo', 'Judit Polgar'],
-        ['estrategico', 'Fabiano Caruana'],
         ['fechado', 'Anatoly Karpov'],
-        ['estrategico', 'Hou Yifan']
+        ['estrategico', 'Viswanathan Anand']
     ],
 
     [
         ['agressivo', 'Garry Kasparov'],
         ['estrategico', 'Ding Liren'],
         ['fechado', 'Vladimir Kramnik'],
-        ['estrategico', 'Viswanathan Anand']
+        ['estrategico', 'Fabiano Caruana']
     ],
 
     [
         ['agressivo', 'Hikaru Nakamura'],
-        ['estrategico', 'Magnus Carlsen'],
+        ['estrategico', 'Bobby Fischer'],
         ['fechado', 'Wesley So'],
         ['agressivo', 'Mikhail Tal']
     ],
 
     [
-        ['agressivo', 'Alireza Firouzja'],
-        ['estrategico', 'Bobby Fischer'],
+        ['agressivo', 'Judit Polgar'],
+        ['estrategico', 'Magnus Carlsen'],
         ['fechado', 'Tigran Petrosian'],
-        ['estrategico', 'Hou Yifan']
+        ['fechado', 'Alireza Firouzja']
+    ],
+
+    [
+        ['agressivo', 'Garry Kasparov'],
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Anatoly Karpov'],
+        ['fechado', 'Hou Yifan']
+    ],
+
+    [
+        ['agressivo', 'Hikaru Nakamura'],
+        ['estrategico', 'Ding Liren'],
+        ['fechado', 'Vladimir Kramnik'],
+        ['estrategico', 'Viswanathan Anand']
     ],
 
     [
         ['agressivo', 'Mikhail Tal'],
+        ['estrategico', 'Bobby Fischer'],
+        ['fechado', 'Wesley So'],
+        ['agressivo', 'Judit Polgar']
+    ],
+
+    [
+        ['agressivo', 'Alireza Firouzja'],
+        ['estrategico', 'Fabiano Caruana'],
+        ['fechado', 'Tigran Petrosian'],
+        ['agressivo', 'Hou Yifan']
+    ],
+
+    [
+        ['agressivo', 'Garry Kasparov'],
         ['estrategico', 'Magnus Carlsen'],
         ['fechado', 'Anatoly Karpov'],
-        ['estrategico', 'Viswanathan Anand']
+        ['fechado', 'Viswanathan Anand']
     ]
-]
+];
 
 const idEstilo = {
     agressivo: 1,
@@ -276,8 +393,9 @@ function carregarPergunta() {
         let estiloEscolhido = dadosResposta[0];
         let gmEscolhido = dadosResposta[1];
 
-        estilo[estiloEscolhido]++;
-        gms[gmEscolhido]++;
+        let peso = pesosPergunta[perguntaCount - 1];
+        estilo[estiloEscolhido] += peso;
+        gms[gmEscolhido] += peso * pesoGm[gmEscolhido];
     }
 
     let titulos = Object.keys(perguntas);
