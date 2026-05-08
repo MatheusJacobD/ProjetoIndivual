@@ -10,45 +10,45 @@ O tema escolhido foi o xadrez, unindo aprendizado técnico com um assunto de int
 🌐 HTML | CSS | JavaScript
 O projeto possui páginas desenvolvidas utilizando tecnologias web fundamentais, com foco em:
 
-• Estruturação de páginas;
-• Estilização responsiva;
-• Interatividade com JavaScript;
-• Manipulação de elementos;
-• Validações de formulários;
+• Estruturação de páginas;<br>
+• Estilização responsiva;<br>
+• Interatividade com JavaScript;<br>
+• Manipulação de elementos;<br>
+• Validações de formulários;<br>
 • Uso de vetores, funções, condicionais e repetições.
 
 🔐 Login | Cadastro
 O sistema conta com autenticação de usuários utilizando:
 
-• API Node.js fornecida pela faculdade;
-• Integração com banco de dados MySQL;
-• Cadastro e login de usuários;
+• API Node.js fornecida pela faculdade;<br>
+• Integração com banco de dados MySQL;<br>
+• Cadastro e login de usuários;<br>
 • Armazenamento de informações em uma VM Linux (Lubuntu).
 
 📊 Dashboard
-Baseado nos resultados dos quizzes realizados pelos usuários, o projeto apresenta dashboards e indicadores com:
+Baseado nos resultados dos quizzes realizados pelos usuários, o projeto apresenta dashboards e indicadores com:<br>
 
-• Rankings;
-• Estatísticas;
-• Tabelas;
-• Dados comparativos;
+• Rankings;<br>
+• Estatísticas;<br>
+• Tabelas;<br>
+• Dados comparativos;<br>
 • Informações sobre estilos e perfis enxadrísticos.
 
-♟️ Funcionalidades
-• Página inicial informativa sobre xadrez;
-• Sistema de login e cadastro;
-• Quiz de estilos enxadrísticos;
-• Registro de resultados;
-• Dashboard com estatísticas;
-• Rankings de jogadores;
+♟️ Funcionalidades<br>
+• Página inicial informativa sobre xadrez;<br>
+• Sistema de login e cadastro;<br>
+• Quiz de estilos enxadrísticos;<br>
+• Registro de resultados;<br>
+• Dashboard com estatísticas;<br>
+• Rankings de jogadores;<br>
 • Interface personalizada inspirada no universo do xadrez.
 
-🧠 Disciplinas Aplicadas
-O projeto envolve conhecimentos de diversas áreas estudadas durante o semestre:
+🧠 Disciplinas Aplicadas<br>
+O projeto envolve conhecimentos de diversas áreas estudadas durante o semestre:<br>
 
-• Algoritmos → lógica de programação, vetores e funções;
-• Banco de Dados → modelagem lógica e comandos SQL;
-• Tecnologia da Informação → documentação e versionamento com Git;
-• Pesquisa e Inovação → planejamento, dashboards e indicadores;
-• Sistemas Operacionais → utilização de VM Linux;
+• Algoritmos → lógica de programação, vetores e funções;<br>
+• Banco de Dados → modelagem lógica e comandos SQL;<br>
+• Tecnologia da Informação → documentação e versionamento com Git;<br>
+• Pesquisa e Inovação → planejamento, dashboards e indicadores;<br>
+• Sistemas Operacionais → utilização de VM Linux;<br>
 • Desenvolvimento Web → HTML, CSS e JavaScript.
