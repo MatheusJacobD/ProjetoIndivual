@@ -2,45 +2,47 @@ const corVerde = "#779556";
 const corBege = "#EBECD0";
 
 function gerar(id, linhas, colunas) {
-    let tabuleiro = document.getElementById(id);
-    if (!tabuleiro) {
-        return;
-    }
 
-    let texto = tabuleiro.querySelector("span");
-    let textoHTML = "";
+    var tabuleiro = document.getElementById(id);
 
-    if (texto) {
-        textoHTML = texto.outerHTML;
-    }
+    var texto = tabuleiro.innerHTML;
 
-    let html = "";
+    var html = "";
 
-    for (let linha = 0; linha < linhas; linha++) {
-        for (let coluna = 0; coluna < colunas; coluna++) {
-            let cor = ((linha + coluna) % 2 == 0) ? corBege : corVerde;
+    for (var linha = 0; linha < linhas; linha++) {
 
-            let r = parseInt(cor.slice(1, 3), 16);
-            let g = parseInt(cor.slice(3, 5), 16);
-            let b = parseInt(cor.slice(5, 7), 16);
+        for (var coluna = 0; coluna < colunas; coluna++) {
 
-            let opacidade = 1 - (coluna * 0.05);
+            var cor;
+
+            if ((linha + coluna) % 2 == 0) {
+                cor = corBege;
+            } else {
+                cor = corVerde;
+            }
+
+            var r = parseInt(cor.slice(1, 3), 16);
+            var g = parseInt(cor.slice(3, 5), 16);
+            var b = parseInt(cor.slice(5, 7), 16);
+
+            var opacidade = 1 - (coluna * 0.05);
+
             if (opacidade < 0.15) {
                 opacidade = 0.15;
             }
 
             html += `
                 <div style="
-                    width: ${100 / colunas}%;
-                    height: ${100 / linhas}%;
-                    float: left;
-                    background-color: rgba(${r}, ${g}, ${b}, ${opacidade});
+                    width:${100 / colunas}%;
+                    height:${100 / linhas}%;
+                    float:left;
+                    background-color:rgba(${r}, ${g}, ${b}, ${opacidade});
                 "></div>
             `;
         }
     }
 
-    tabuleiro.innerHTML = html + textoHTML;
+    tabuleiro.innerHTML = html + texto;
 }
 
 gerar("tabuleiroTab", 3, 18);
