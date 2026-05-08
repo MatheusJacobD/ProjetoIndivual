@@ -400,7 +400,7 @@ body {
 
 .painelBack {
     width: 90%;
-    height: 85%;
+    height: 90%;
     background-color: #1E1E1E;
     border-radius: 25px;
 }
@@ -541,9 +541,8 @@ body {
 
 .questFinal {
     display: flex;
-    justify-content: end;
-    margin-right: 2%;
-    margin-top: -2%;
+    justify-content: center;
+    margin-top: 1%;
 }
 
 .questFinalContainer {
@@ -770,8 +769,8 @@ body {
 .dashContainer {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 20px;
+    align-items: center;
+    padding-top: 10px;
 }
 
 .painelDash {
@@ -815,6 +814,7 @@ body {
     width: 250px;
     height: 150px;
     border-radius: 10px;
+    border: #1a1a1a solid 3px;
 }
 
 .KPItitle {

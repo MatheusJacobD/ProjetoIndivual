@@ -15,9 +15,9 @@ fetch("/dash/receberResultados", {
 
         document.getElementById('total').textContent = dados[0][0].totalUsuarios;
         document.getElementById('porcenQuest').textContent = porc;
-        document.getElementById('qtdAg').textContent = dados[2][0].quantidade;
+        document.getElementById('qtdAg').textContent = dados[2][1].quantidade;
         document.getElementById('qtdFc').textContent = dados[2][2].quantidade;
-        document.getElementById('qtdEs').textContent = dados[2][1].quantidade;
+        document.getElementById('qtdEs').textContent = dados[2][0].quantidade;
         document.getElementById('gmCm').textContent = dados[3][0].gmMaisRecebido;
         document.getElementById('abCm').textContent = dados[4][0].aberturaMaisRecebida;
 

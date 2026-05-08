@@ -83,7 +83,7 @@ function login() {
     let email = ipt_email.value;
     let senha = ipt_senha.value;
 
-    fetch("http://localhost:3333/usuarios/autenticar", {
+    fetch("/usuarios/autenticar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
