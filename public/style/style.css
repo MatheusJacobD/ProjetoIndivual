@@ -73,6 +73,12 @@ body {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 1px 0 rgba(0, 0, 0, 0.35);
 }
 
+.navLinks a:active {
+    transform: translateY(4px);
+    border-width: 2px 2px 2px 2px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 0 #14502d;
+}
+
 .secaoTab {
     position: relative;
     width: 100%;
@@ -259,6 +265,18 @@ body {
     padding: 12px 28px;
     text-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+.botaoTeste:active {
+    transform: translateY(4px);
+    border-width: 2px 2px 2px 2px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 0 #14502d;
+}
+
+.botaoFinalizar:active {
+    transform: translateY(4px);
+    border-width: 2px 2px 2px 2px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 0 #14502d;
 }
 
 .footer {
@@ -479,6 +497,12 @@ body {
     height: 10%;
     width: 30%;
     cursor: pointer;
+}
+
+.questQuestions:active {
+    transform: translateY(4px);
+    border-width: 2px 2px 2px 2px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25), 0 1px 0 #14502d;
 }
 
 .questNumber {
