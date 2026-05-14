@@ -1,0 +1,10 @@
+Apresentação pessoal e tema escolhido: Xadrez
+Por que escolhi esse tema / linha da vida
+Objetivo do projeto individual
+Tecnologias e disciplinas aplicadas no projeto
+Organização do projeto: Trello, Git e Scrum
+Banco de dados e VM Linux
+Site completo
+Lógica do sistema e demonstração do código
+Valores, dificuldade, superação e gratidão
+Conclusão

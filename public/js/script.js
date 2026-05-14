@@ -25,7 +25,7 @@ function validar() {
         senhaValida = false;
     }
 
-    if (valido && senhaValida && nomeValido) {
+    if (senhaValida && nomeValido) {
         cadastrar();
     }
 }

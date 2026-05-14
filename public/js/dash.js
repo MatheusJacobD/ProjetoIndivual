@@ -8,20 +8,17 @@ fetch("/dash/receberResultados", {
         return resposta.json();
     })
     .then(function (dados) {
-        console.log(dados);
-
-        let porc = dados[1][0].usuariosResponderam / dados[0][0].totalUsuarios * 100;
+        let porc = dados.usuariosResponderam[0].usuariosResponderam / dados.totalUsuarios[0].totalUsuarios * 100;
         porc = porc.toFixed(0);
+        document.getElementById('porcenQuest').textContent = `${porc}%`;
 
-        document.getElementById('total').textContent = dados[0][0].totalUsuarios;
-        document.getElementById('porcenQuest').textContent = porc;
-        document.getElementById('qtdAg').textContent = dados[2][1].quantidade;
-        document.getElementById('qtdFc').textContent = dados[2][2].quantidade;
-        document.getElementById('qtdEs').textContent = dados[2][0].quantidade;
-        document.getElementById('gmCm').textContent = dados[3][0].gmMaisRecebido;
-        document.getElementById('abCm').textContent = dados[4][0].aberturaMaisRecebida;
+        document.getElementById('qtdAg').textContent = dados.estilos[1].quantidade;
+        document.getElementById('qtdFc').textContent = dados.estilos[2].quantidade;
+        document.getElementById('qtdEs').textContent = dados.estilos[0].quantidade;
+        document.getElementById('gmCm').textContent = dados.gmMaisRecebido[0].gmMaisRecebido;
+        document.getElementById('abCm').textContent = dados.aberturaMaisRecebida[0].aberturaMaisRecebida;
 
-        let aberturas = dados[5];
+        let aberturas = dados.aberturas;
 
         let nomes = [];
         let valores = [];
@@ -29,9 +26,8 @@ fetch("/dash/receberResultados", {
         let gms = [];
         let qtds = [];
 
-        for (let i = 0; i < dados[7].length; i++) {
-            rankLista.push([i+1, dados[7][i].nome,
-            dados[7][i].estilo, dados[7][i].gm, dados[7][i].abertura]);
+        for (let i = 0; i < dados.ranking.length; i++) {
+            rankLista.push([i + 1, dados.ranking[i].nome, dados.ranking[i].estilo, dados.ranking[i].gm, dados.ranking[i].abertura]);
         }
 
         for (let i = 0; i < aberturas.length; i++) {
@@ -39,17 +35,17 @@ fetch("/dash/receberResultados", {
             valores.push(aberturas[i].quantidade);
         }
 
-        for (let i = 0; i < dados[6].length; i++) {
-            gms.push(dados[6][i].gm);
-            qtds.push(dados[6][i].quantidade);
+        for (let i = 0; i < dados.gms.length; i++) {
+            gms.push(dados.gms[i].gm);
+            qtds.push(dados.gms[i].quantidade);
         }
 
         criarGraficoPizza(nomes, valores);
         criarGraficoBarra(gms, qtds);
 
-        if (dados[4][0].id >= 1 && dados[4][0].id <= 5) {
+        if (dados.aberturaMaisRecebida[0].id >= 1 && dados.aberturaMaisRecebida[0].id <= 5) {
             document.getElementById('abCm').style.color = '#CC2E31';
-        } else if (dados[4][0].id > 5 && dados[4][0].id <= 10) {
+        } else if (dados.aberturaMaisRecebida[0].id > 5 && dados.aberturaMaisRecebida[0].id <= 10) {
             document.getElementById('abCm').style.color = '#27AE60';
         } else {
             document.getElementById('abCm').style.color = '#2E5BCC';
@@ -69,9 +65,21 @@ fetch("/dash/receberResultados", {
             }
 
             html += `
-                    <div class="rankLinhas">
-                        <span class="rankText">${rankLista[i][0]}. <a style="color: ${cor};">${rankLista[i][1]}</a> | 
-                        ${rankLista[i][3]}<br>${rankLista[i][4]}</span>
+                    <div class="rankText">
+                        <div class="rankTop">
+                            <div class='rankListaId'>${rankLista[i][0]}</div>
+
+                            <div class="rankInfo">
+                                <a style="color: ${cor};">${rankLista[i][1]}</a> | 
+                                ${rankLista[i][3]}
+                            </div>
+                        </div>
+
+                        <div class='rankListaAberturaContainer'>
+                            <div class='rankListaAbertura' style="background-color: ${cor};">
+                                ${rankLista[i][4]}
+                            </div>
+                        </div>
                     </div>
             `;
         }

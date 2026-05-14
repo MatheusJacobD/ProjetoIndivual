@@ -1,11 +1,26 @@
 var database = require("../database/config")
 
-function receberResultados() {
+function buscarTotalUsuarios() {
     var instrucaoSql = `
-        SELECT COUNT(*) AS totalUsuarios FROM usuario;
+        SELECT COUNT(*) AS totalUsuarios 
+        FROM usuario;
+    `;
 
-        SELECT COUNT(*) AS usuariosResponderam FROM usuario WHERE estiloId IS NOT NULL;
+    return database.executar(instrucaoSql);
+}
 
+function buscarUsuariosResponderam() {
+    var instrucaoSql = `
+        SELECT COUNT(*) AS usuariosResponderam 
+        FROM usuario 
+        WHERE estiloId IS NOT NULL;
+    `;
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarEstilos() {
+    var instrucaoSql = `
         SELECT 
             e.nome AS estilo,
             COUNT(u.id) AS quantidade
@@ -14,7 +29,13 @@ function receberResultados() {
             ON u.estiloId = e.id
         GROUP BY e.id, e.nome
         ORDER BY quantidade DESC;
+    `;
 
+    return database.executar(instrucaoSql);
+}
+
+function buscarGmMaisRecebido() {
+    var instrucaoSql = `
         SELECT 
             g.nome AS gmMaisRecebido,
             COUNT(u.id) AS quantidade
@@ -24,7 +45,13 @@ function receberResultados() {
         GROUP BY g.id, g.nome
         ORDER BY quantidade DESC
         LIMIT 1;
+    `;
 
+    return database.executar(instrucaoSql);
+}
+
+function buscarAberturaMaisRecebida() {
+    var instrucaoSql = `
         SELECT 
             a.id as id,
             a.nome AS aberturaMaisRecebida,
@@ -35,7 +62,13 @@ function receberResultados() {
         GROUP BY a.id, a.nome
         ORDER BY quantidade DESC
         LIMIT 1;
+    `;
 
+    return database.executar(instrucaoSql);
+}
+
+function buscarAberturas() {
+    var instrucaoSql = `
         SELECT 
             a.nome AS abertura,
             COUNT(u.id) AS quantidade
@@ -44,8 +77,14 @@ function receberResultados() {
             ON u.aberturaId = a.id
         GROUP BY a.id, a.nome
         ORDER BY quantidade DESC
-        limit 4;
+        LIMIT 4;
+    `;
 
+    return database.executar(instrucaoSql);
+}
+
+function buscarGms() {
+    var instrucaoSql = `
         SELECT 
             g.nome AS gm,
             COUNT(u.id) AS quantidade
@@ -54,8 +93,14 @@ function receberResultados() {
             ON u.gmId = g.id
         GROUP BY g.id, g.nome
         ORDER BY quantidade DESC
-        limit 6;
+        LIMIT 6;
+    `;
 
+    return database.executar(instrucaoSql);
+}
+
+function buscarRanking() {
+    var instrucaoSql = `
         SELECT 
             u.id,
             u.nome,
@@ -68,12 +113,20 @@ function receberResultados() {
         JOIN gm g 
             ON u.gmId = g.id
         JOIN abertura a 
-            ON u.aberturaId = a.id;
+            ON u.aberturaId = a.id
+        ORDER BY u.id;
     `;
 
     return database.executar(instrucaoSql);
 }
 
 module.exports = {
-    receberResultados
+    buscarTotalUsuarios,
+    buscarUsuariosResponderam,
+    buscarEstilos,
+    buscarGmMaisRecebido,
+    buscarAberturaMaisRecebida,
+    buscarAberturas,
+    buscarGms,
+    buscarRanking
 };
