@@ -1017,5 +1017,6 @@ body {
     justify-content: center;
     gap: 50px;
     height: 100%;
-    margin-top: -5%;
+    margin-bottom: 3%;
+    margin-top: -1%;
 }
