@@ -87,12 +87,12 @@ function obterDadosGrafico() {
                         </div>
                     </div>
             `;
-            exec = true;
+                exec = true;
             }
 
             document.getElementById('rank').innerHTML = html;
-            setTimeout(obterDadosGrafico, 10000);
         });
+
 }
 
 let graficoPizza = null;
@@ -118,6 +118,7 @@ function criarGraficoPizza(nomes, valores) {
             }]
         },
         options: {
+            animation: false,
             plugins: {
                 title: {
                     display: true,
@@ -159,14 +160,15 @@ function criarGraficoBarra(nomes, valores) {
             labels: nomes,
 
             datasets: [{
-                label: "Pontuação",
+                label: "Quantidade",
                 data: valores,
-
                 backgroundColor: [
-                    "#1C7341",
-                    "#ED1D60",
-                    "#18B094",
-                    "#6A2CA5"
+                    "#ee9c00",
+                    "#e2007f",
+                    "#00b1ae",
+                    "#6f067b",
+                    "#df0032",
+                    "#009f62"
                 ],
 
                 borderWidth: 1
@@ -226,4 +228,7 @@ function criarGraficoBarra(nomes, valores) {
 
 criarGraficoBarra();
 criarGraficoPizza();
+
 obterDadosGrafico();
+setInterval(obterDadosGrafico, 5000);
+
