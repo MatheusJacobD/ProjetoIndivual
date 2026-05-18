@@ -83,7 +83,7 @@ function login() {
         .then(function (json) {
             sessionStorage.ID_USUARIO = json.id;
             sessionStorage.NOME_USUARIO = json.nome;
-
+            
             window.location = "index.html";
         })
         .catch(function (erro) {

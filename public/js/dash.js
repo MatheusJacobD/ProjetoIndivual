@@ -13,8 +13,8 @@ function obterDadosGrafico() {
             porc = porc.toFixed(0);
             document.getElementById('porcenQuest').textContent = `${porc}%`;
 
-            document.getElementById('qtdAg').textContent = dados.estilos[1].quantidade;
-            document.getElementById('qtdFc').textContent = dados.estilos[2].quantidade;
+            document.getElementById('qtdAg').textContent = dados.estilos[2].quantidade;
+            document.getElementById('qtdFc').textContent = dados.estilos[1].quantidade;
             document.getElementById('qtdEs').textContent = dados.estilos[0].quantidade;
             document.getElementById('gmCm').textContent = dados.gmMaisRecebido[0].gmMaisRecebido;
             document.getElementById('abCm').textContent = dados.aberturaMaisRecebida[0].aberturaMaisRecebida;
